@@ -51,36 +51,36 @@ void Logger::createLogEntry(LogSeverity severity, std::string message)
 
 	switch (severity)
 	{
-		case LogSeverity::Debug:
-			if (consoleHandle)
-				SetConsoleTextAttribute(consoleHandle, 8);
+	case LogSeverity::Debug:
+		if (consoleHandle)
+			SetConsoleTextAttribute(consoleHandle, 8);
 
-			entry << xorstr_("[DEBUG] ");
-			break;
-		case LogSeverity::Warning:
-			if (consoleHandle)
-				SetConsoleTextAttribute(consoleHandle, 6);
+		entry << xorstr_("[DEBUG] ");
+		break;
+	case LogSeverity::Warning:
+		if (consoleHandle)
+			SetConsoleTextAttribute(consoleHandle, 6);
 
-			entry << xorstr_("[WARNING] ");
-			break;
-		case LogSeverity::Error:
-			if (consoleHandle)
-				SetConsoleTextAttribute(consoleHandle, 4);
+		entry << xorstr_("[WARNING] ");
+		break;
+	case LogSeverity::Error:
+		if (consoleHandle)
+			SetConsoleTextAttribute(consoleHandle, 4);
 
-			entry << xorstr_("[ERROR] ");
-			break;
-		case LogSeverity::Assert:
-			if (consoleHandle)
-				SetConsoleTextAttribute(consoleHandle, 5);
+		entry << xorstr_("[ERROR] ");
+		break;
+	case LogSeverity::Assert:
+		if (consoleHandle)
+			SetConsoleTextAttribute(consoleHandle, 5);
 
-			entry << xorstr_("[ASSERT FAIL] ");
-			break;
-		default:
-			if (consoleHandle)
-				SetConsoleTextAttribute(consoleHandle, 7);
+		entry << xorstr_("[ASSERT FAIL] ");
+		break;
+	default:
+		if (consoleHandle)
+			SetConsoleTextAttribute(consoleHandle, 7);
 
-			entry << xorstr_("[INFO] ");
-			break;
+		entry << xorstr_("[INFO] ");
+		break;
 	}
 
 	entry << message;
@@ -103,7 +103,7 @@ void Logger::Initialize(LogSeverity scope, bool encrypt, bool initializeConsole,
 {
 	VIRTUALIZER_FISH_RED_START
 
-	shouldEncrypt = encrypt;
+		shouldEncrypt = encrypt;
 
 	Logger::logFilePath = Storage::LogsDirectory + xorstr_("\\runtime.log");
 	Logger::crashLogFilePath = Storage::LogsDirectory + xorstr_("\\crash.log");
@@ -138,9 +138,9 @@ void Logger::Log(LogSeverity severity, const char* format, ...)
 	{
 		char buffer[1024];
 		va_list args;
-		__builtin_va_start(args, format);
+		va_start(args, format);
 		vsprintf_s(buffer, format, args);
-		__builtin_va_end(args);
+		va_end(args);
 
 		createLogEntry(severity, std::string(buffer));
 	}
@@ -175,7 +175,7 @@ void Logger::StartPerformanceCounter(const std::string& guid)
 void Logger::StopPerformanceCounter(const std::string& guid)
 {
 	VIRTUALIZER_MUTATE_ONLY_START
-	std::pair<std::string, std::tuple<tm, tm>> performanceReport = {};
+		std::pair<std::string, std::tuple<tm, tm>> performanceReport = {};
 	// Find index
 	for (auto& pr : performanceLogMap)
 	{

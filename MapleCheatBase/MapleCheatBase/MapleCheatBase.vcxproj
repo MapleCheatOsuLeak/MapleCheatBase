@@ -100,7 +100,7 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
-      <AdditionalDependencies>cryptlib_dbg.lib;%(AdditionalDependencies);ws2_32.lib;opengl32.lib;libcurl_a.lib;d3dx9.lib</AdditionalDependencies>
+      <AdditionalDependencies>cryptlib_dbg.lib;%(AdditionalDependencies);ws2_32.lib;opengl32.lib;libcurl_a.lib;d3dx9.lib;Wldap32.lib;crypt32.lib;Normaliz.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -121,7 +121,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
-      <AdditionalDependencies>cryptlib.lib;%(AdditionalDependencies);ws2_32.lib;ws2_32.lib;opengl32.lib;libcurl_a.lib;d3dx9.lib</AdditionalDependencies>
+      <AdditionalDependencies>cryptlib.lib;%(AdditionalDependencies);ws2_32.lib;ws2_32.lib;opengl32.lib;libcurl_a.lib;d3dx9.lib;Wldap32.lib;crypt32.lib;Normaliz.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -138,7 +138,7 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
-      <AdditionalDependencies>cryptlib_dbg.lib;%(AdditionalDependencies);ws2_32.lib;ws2_32.lib;opengl32.lib;libcurl_a.lib;d3dx9.lib</AdditionalDependencies>
+      <AdditionalDependencies>cryptlib_dbg.lib;%(AdditionalDependencies);ws2_32.lib;ws2_32.lib;opengl32.lib;libcurl_a.lib;d3dx9.lib;Wldap32.lib;crypt32.lib;Normaliz.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -159,7 +159,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
-      <AdditionalDependencies>cryptlib.lib;%(AdditionalDependencies);ws2_32.lib;ws2_32.lib;opengl32.lib;libcurl_a.lib;d3dx9.lib</AdditionalDependencies>
+      <AdditionalDependencies>cryptlib.lib;%(AdditionalDependencies);ws2_32.lib;ws2_32.lib;opengl32.lib;libcurl_a.lib;d3dx9.lib;Wldap32.lib;crypt32.lib;Normaliz.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
